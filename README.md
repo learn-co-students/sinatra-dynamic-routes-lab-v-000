@@ -5,7 +5,7 @@ This lab will serve to reinforce your understanding of routes in a Sinatra appli
 
 + Create a dynamic route at `get '/reversename/:name'` that accepts a name and renders the name backwards.
 
-+ Create a dynamic route at `get '/square/:number'` that accepts a number and returns the square of that number.
++ Create a dynamic route at `get '/square/:number'` that accepts a number and returns the square of that number. **Note:** Remember that values in params always come in as strings, and your return value for the route should also be a string (use `.to_i` and `.to_s`).
 
 + Create a dynamic route at `get '/say/:number/:phrase'` that accepts a number and a phrase and returns that phrase in a string the number of times given.
 
