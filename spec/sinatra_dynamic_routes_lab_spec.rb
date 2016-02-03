@@ -38,7 +38,7 @@ describe App do
     end
 
     it 'repeats the phrase n times' do 
-      expect(last_response.body).to include("show me the money\nshow me the money\nshow me the money")
+      expect(last_response.body).to include("show me the money\\nshow me the money\\nshow me the money")
     end
   end
 
