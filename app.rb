@@ -35,6 +35,8 @@ class App < Sinatra::Base
 				"#{num1 * num2}"
 			when "divide"
 				"#{num1 / num2}"
+			else
+				"Unable to perform this operation"
 			end
 	end
 	
