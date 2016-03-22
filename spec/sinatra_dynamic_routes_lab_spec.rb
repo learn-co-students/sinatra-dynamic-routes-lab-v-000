@@ -56,7 +56,7 @@ describe App do
     end
   end
 
-    describe 'GET //:operation/:number1/:number2' do
+    describe 'GET /:operation/:number1/:number2' do
 
     it 'adds two numbers together' do 
       get '/add/10/9'
