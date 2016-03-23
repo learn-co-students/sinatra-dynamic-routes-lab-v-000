@@ -6,6 +6,7 @@ class App < Sinatra::Base
     @name = params[:name]
     @reversed = @name.split(//).reverse.join
     "#{@reversed}"
+    #@name.reverse
   end
 
   get '/square/:number' do 
@@ -21,7 +22,8 @@ class App < Sinatra::Base
     @number.to_i.times do
       @array << @phrase
     end
-    "#{@array.join("\n")}" 
+    "#{@array.join("\n")}"
+    #"#{@phrase}\n"*@number.to_i 
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do 
