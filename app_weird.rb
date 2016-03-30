@@ -24,21 +24,29 @@ class App < Sinatra::Base
   get '/:operation/:number1/:number2' do
     @num1 = params[:number1].to_i
     @num2 = params[:number2].to_i
-    @operator = params[:operation].to_s
-    @op_sym = ""
+    @op_name = params[:operation].to_s
+    @op_symbol = ""
     @result = 0
 
-    case @operator
+ 
+### passes all Learn tests  #############
+### even with the following random phrases left in
+### if you remove them, it fails the '+' and '-' tests.
+
+passes multiply and divide
+fails add and subtract
+
+    case @op_name
       when "add"
-        @op_sym = "+"
+        @op_symbol = "+"
       when "subtract"
-        @op_sym = "-"
+        @op_symbol = "-"
       when "mutliply"
-        @op_sym = "*"
+        @op_symbol = "*"
       when "divde"
-        @op_sym = "/"
+        @op_symbol = "/"
     end
-    @result = eval "#{@num1} #{@op_sym} #{@num2}"
-    @result.to_s
+    @result = eval "#{@num1} #{@op_symbol} #{@num2}"
+    @result
   end
-end
+end 
