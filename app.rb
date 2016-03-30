@@ -33,9 +33,9 @@ class App < Sinatra::Base
         @op_sym = "+"
       when "subtract"
         @op_sym = "-"
-      when "mutliply"
+      when "multiply"
         @op_sym = "*"
-      when "divde"
+      when "divide"
         @op_sym = "/"
     end
     @result = eval "#{@num1} #{@op_sym} #{@num2}"
