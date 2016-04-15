@@ -52,7 +52,7 @@ describe App do
     end
 
     it 'concatenates the words and adds a period' do 
-      expect(last_response.body).to include("stop rhyming I mean it.")
+      expect(last_response.body).to include("Stop rhyming I mean it.")
     end
   end
 
