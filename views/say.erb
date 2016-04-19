@@ -1,0 +1,9 @@
+<body>
+  <% @num = params[:number] %>
+  <% @phrase = params[:phrase] %>
+  <% string = "" %>
+  <% @num.to_i.times do %>
+    <<% string << "#{@phrase}\n"%></p>
+  <% end %>
+  <%= string %>
+</body>
