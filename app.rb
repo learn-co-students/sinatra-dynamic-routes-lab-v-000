@@ -27,16 +27,15 @@ class App < Sinatra::Base
     num2 = params[:number2].to_i
 
     case operation
-    when "add"
-      result = num1 + num2
-    when "subtract"
-      result = num1 - num2
-    when "multiply"
-      result = num1 * num2
-    when "divide"
-      result = num1/num2
+      when "add"
+        result = num1 + num2
+      when "subtract"
+        result = num1 - num2
+      when "multiply"
+        result = num1 * num2
+      when "divide"
+        result = num1/num2
+      end
+      result.to_s
     end
-    result.to_s
-  end
-
 end
