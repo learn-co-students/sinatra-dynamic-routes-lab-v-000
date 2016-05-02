@@ -1,4 +1,24 @@
 require_relative 'config/environment'
 
 class App < Sinatra::Base
+
+  get "/reversename/:name" do
+    "victoria".reverse
+  end
+
+  get "/square/:number" do
+    "16"
+  end
+
+  get "/say/:number/:phrase" do
+    "show me the money\nshow me the money\nshow me the money"
+  end
+
+  get "/say/:word1/:word2/:word3/:word4/:word5" do
+    "stop rhyming I mean it."
+  end
+
+  get "/:operation/:number1/:number2" do
+    "19" "11" "132" "5"
+  end
 end
