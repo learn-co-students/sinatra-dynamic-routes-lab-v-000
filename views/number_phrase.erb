@@ -1,0 +1,4 @@
+
+<%=@decoded_phrase = URI.unescape(params[:phrase])
+
+["#{@decoded_phrase}"] * (params[:number].to_i) * "\n"%>
