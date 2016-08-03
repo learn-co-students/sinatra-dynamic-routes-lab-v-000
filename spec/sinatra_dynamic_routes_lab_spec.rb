@@ -14,33 +14,33 @@ describe App do
     end
   end
 
-  describe 'GET /square/:number' do
-    before do 
-      get '/square/4'
-    end
+  # describe 'GET /square/:number' do
+  #   before do 
+  #     get '/square/4'
+  #   end
 
-    it 'sends a 200 status code' do
-      expect(last_response.status).to eq(200)
-    end
+  #   it 'sends a 200 status code' do
+  #     expect(last_response.status).to eq(200)
+  #   end
 
-    it 'renders the square of the number' do 
-      expect(last_response.body).to include("16")
-    end
-  end
+  #   it 'renders the square of the number' do 
+  #     expect(last_response.body).to include("16")
+  #   end
+  # end
 
-  describe 'GET /say/:number/:phrase' do
-    before do 
-      get '/say/3/show%20me%20the%20money'
-    end
+  # describe 'GET /say/:number/:phrase' do
+  #   before do 
+  #     get '/say/3/show%20me%20the%20money'
+  #   end
 
-    it 'sends a 200 status code' do
-      expect(last_response.status).to eq(200)
-    end
+  #   it 'sends a 200 status code' do
+  #     expect(last_response.status).to eq(200)
+  #   end
 
-    it 'repeats the phrase n times' do 
-      expect(last_response.body).to include("show me the money\nshow me the money\nshow me the money")
-    end
-  end
+  #   it 'repeats the phrase n times' do 
+  #     expect(last_response.body).to include("show me the money\nshow me the money\nshow me the money")
+  #   end
+  # end
 
   describe 'GET /say/:word1/:word2/:word3/:word4/:word5' do
     before do 
