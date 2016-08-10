@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<% sentence_array = [] %>
+
+<% sentence_array << params[:word1] %>
+<% sentence_array << params[:word2] %>
+<% sentence_array << params[:word3] %>
+<% sentence_array << params[:word4] %>
+<% sentence_array << params[:word5] %>
+
+<p><%= sentence_array.join(" ") %>.<p>
