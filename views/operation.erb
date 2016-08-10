@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<% if params[:operation] == "add" %>
+<%   @operation = + %>
+<% elsif params[:operation] == "subtract" %>
+<%   @operation = - %>
+<% elsif params[:operation] == "multiply" %>
+<%   @operation = * %>
+<% elsif params[:operation] == "divide" %>
+<%   @operation = \/ %>
+
+
+<%= params[:number1] @operation params[:number2] %>
+
