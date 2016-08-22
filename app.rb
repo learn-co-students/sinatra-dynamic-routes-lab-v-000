@@ -11,8 +11,9 @@ class App < Sinatra::Base
     "#{reversed_name}"
   end
 
-  get '/square' do
-    "Square that joint"
+  get '/square/:number' do
+    squared = params[:number].to_i * params[:number].to_i
+    "#{squared}"
   end
 
 end
