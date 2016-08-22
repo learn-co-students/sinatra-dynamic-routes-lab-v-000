@@ -6,12 +6,13 @@ class App < Sinatra::Base
     "Hello World"
   end
 
-  get '/reversename' do
-    "Reverse that joint"
+  get '/reversename/:name' do
+    reversed_name = params[:name].reverse
+    "#{reversed_name}"
   end
 
   get '/square' do
     "Square that joint"
   end
-  
+
 end
