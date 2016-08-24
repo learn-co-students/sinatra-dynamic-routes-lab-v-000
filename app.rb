@@ -42,7 +42,7 @@ class App < Sinatra::Base
       @answer = @num1 * @num2
       "#{@answer}"
     elsif @operation == "divide"
-      @answer = @num / @num
+      @answer = @num1 / @num2
       "#{@answer}"
     else
       "Unsure of that operation"
