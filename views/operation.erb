@@ -1,0 +1,9 @@
+<% if params[:operation.strip].downcase == "add" %>
+<%= params[:number1] + params[:number2] %>
+<% elsif params[:operation.strip].downcase == "subtract" %>
+<%= params[:number1] - params[:number2] %>
+<% elsif params[:operation.strip].downcase == "multiply" %>
+<%= params[:number1] * params[:number2] %>
+<% elsif params[:operation.strip].downcase == "divide" %>
+<%= params[:number1] / params[:number2] %>
+<% end %>
