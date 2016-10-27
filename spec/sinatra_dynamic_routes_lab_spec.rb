@@ -1,3 +1,5 @@
+require 'pry'
+
 describe App do
 
   describe 'GET /reversename/:name' do
@@ -60,21 +62,25 @@ describe App do
 
     it 'adds two numbers together' do 
       get '/add/10/9'
+      expect(last_response.status).to eq(200)
       expect(last_response.body).to include("19")
     end
 
     it 'subtracts the second number from the first' do 
       get '/subtract/20/9'
+      expect(last_response.status).to eq(200)
       expect(last_response.body).to include("11")
     end
 
     it 'multiplies two numbers together' do 
       get '/multiply/12/11'
+      expect(last_response.status).to eq(200)
       expect(last_response.body).to include("132")
     end
 
     it 'divides the first number by the second number' do 
       get '/divide/10/2'
+      expect(last_response.status).to eq(200)
       expect(last_response.body).to include("5")
     end
   end
