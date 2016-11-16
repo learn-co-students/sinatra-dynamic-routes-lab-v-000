@@ -2,14 +2,14 @@
 source "https://rubygems.org"
 
 # gem "rails"
-
+gem 'pry'
 gem 'sinatra'
     gem 'rake'
     gem 'thin'
     gem 'shotgun'
     gem 'pry'
     gem 'require_all'
-    
+
 group :test do
       gem 'rspec'
       gem 'capybara'
