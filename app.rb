@@ -22,8 +22,8 @@ end
 
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    params[:word1] + params[:word2] + params[:word3] + params[:word4] + params[:word5]
-    "params.concat"
+    @new_str = params[:word1].to_s + params[:word2].to_s + params[:word3].to_s + params[:word4].to_s + params[:word5]to._s
+    "#{new_str}.concat.join('+')"
   end
 
 
