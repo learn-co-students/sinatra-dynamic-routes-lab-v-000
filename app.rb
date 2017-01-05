@@ -9,16 +9,16 @@ class App < Sinatra::Base
 
  get '/square/:number' do
     @number = params[:number]
-   "#{@number ** 2}.to_i" #"These words are strings #{ Ruby code to be evaluated and then converted to string}"
+   "#{@number.to_i ** 2}" #"These words are strings #{ Ruby code to be evaluated and then converted to string}"
  end
 
  get '/say/:number/:phrase' do
-     @new_phrase = ""
+     @new_phrase = " "
      params[:number].to_i.times do |i|
      @new_phrase << params[:phrase] + "\n"
      @new_phrase
  end
-     
+
 
  get '/say/:word1/:word2/:word3/:word4/:word5' do
    @concatenate = params[:word1] + params[:word2] + params[:word3] + params[:word4] + params[:word5]
