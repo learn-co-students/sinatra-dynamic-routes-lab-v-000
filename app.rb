@@ -27,20 +27,19 @@ class App < Sinatra::Base
     "#{@array.join(" ")}."
   end
 
-  get "/:operation/:n1/:n2" do
-    n1 = params[:n1].to_i
-    n2 = params[:n2].to_i
-    @answer = ''
-    case params[:operation]
-       when "subtract"
-         @answer = n1 - n2
-       when "add"
-         @answer = n1 + n2
-       when "multiply"
-         @answer = n1 * n2
-       when "divide"
-         @answer = n1 / n2
-    end
-       erb :operation
-  end
+  get '/:operation/:number1/:number2' do
+    @num_1 = params[:number1].to_f
+    @num_2 = params[:number2].to_f
+    @operator = params[:operation]
+      case @operator
+        when "add"
+         "#{@num_1 + @num_2}"
+        when "subtract"
+         "#{@num_1 - @num_2}"
+        when "multiply"
+          "#{@num_1 * @num_2}"
+        when "divide"
+          "#{@num_1 / @num_2}"
+        end
+     end
 end
