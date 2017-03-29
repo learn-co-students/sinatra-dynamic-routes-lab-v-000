@@ -25,8 +25,6 @@ class App < Sinatra::Base
   get '/:operation/:number1/:number2' do
     operations = {'add' => '+','subtract' => '-', 'multiply' => '*', 'divide' => '/' }
     "#{params[:number1].to_i.method(operations[params[:operation]]).(params[:number2].to_i)}"
-
-  #  raise params.inspect
   end
 
 
