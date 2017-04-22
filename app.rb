@@ -15,18 +15,15 @@ class App < Sinatra::Base
     @number=params[:number].to_i
     @long_phrase = ""
 
-    @number.times do |i|
-       @long_phrase << params[:phrase] + "\n"
-    end
+    @number.times { |i| @long_phrase << params[:phrase] + "\n"}
 
     "#{@long_phrase}"
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     @sentence = ''
-    5.times do |i|
-      @sentence << params[:"word#{i+1}"] + ' '
-    end
+    5.times {|i| @sentence << params[:"word#{i+1}"] + ' '}
+
     "#{@sentence.chop}."
   end
 
@@ -46,6 +43,5 @@ class App < Sinatra::Base
     else
       "Error"
     end
-
   end
 end
