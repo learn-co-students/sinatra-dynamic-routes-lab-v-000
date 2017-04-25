@@ -7,7 +7,7 @@ class App < Sinatra::Base
   end
 
   get '/square/:number' do
-    "#{params[:number].to_i ** 2}"
+    (params[:number].to_i ** 2).to_s
   end
 
   get '/say/:number/:phrase' do
@@ -21,16 +21,19 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
+    operation = params[:operation]
     num1, num2 = params[:number1].to_i, params[:number2].to_i
 
-    if params[:operation] == "add"
+    if operation == "add"
       "#{num1 + num2}"
-    elsif params[:operation] == "subtract"
+    elsif operation == "subtract"
       "#{num1 - num2}"
-    elsif params[:operation] == "multiply"
+    elsif operation == "multiply"
       "#{num1 * num2}"
-    elsif params[:operation] == "divide"
+    elsif operation == "divide"
       "#{num1 / num2}"
+    else
+      "Unable to perform this operation."
     end
   end
 
