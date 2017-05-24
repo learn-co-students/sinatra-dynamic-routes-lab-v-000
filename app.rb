@@ -8,14 +8,10 @@ class App < Sinatra::Base
     (params[:number].to_i ** 2).to_s
   end
   get "/say/:number/:phrase" do
-
-       p = params[:phrase]
-       num = params[:number].to_i
-
        str = ""
 
-       num.times do
-         str = str + p + "\n"
+       params[:number].to_i.times do
+         str += "#{params[:phrase]}\n"
        end
        str
 
