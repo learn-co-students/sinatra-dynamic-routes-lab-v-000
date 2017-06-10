@@ -26,6 +26,36 @@ class App < Sinatra::Base
     "#{@phrase}"
   end
 
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    # "wtf"
+    # binding.pry
+    @word1 = params[:word1]
+    @word2 = params[:word2]
+    @word3 = params[:word3]
+    @word4 = params[:word4]
+    @word5 = params[:word5]
+    "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}."
+  end
 
+  get '/:operation/:number1/:number2' do
+    @operation = params[:operation]
+    @number1 = params[:number1].to_i
+    @number2 = params[:number2].to_i
+    # binding.pry
+    case @operation
+    when "add"
+      "#{@number1 + @number2}"
+    when "subtract"
+      "#{@number1 - @number2}"
+    when "multiply"
+      "#{@number1 * @number2}"
+    when "divide"
+      "#{@number1 / @number2}"
+    else
+      "Wrong operator provided"
+    end
+
+
+  end
 
 end
