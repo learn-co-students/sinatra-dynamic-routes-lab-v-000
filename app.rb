@@ -40,26 +40,24 @@ class App < Sinatra::Base
     @number2 = params[:number2]
       if @operation == "add"
         addition = @number1.to_i + @number2.to_i
-        "#{addition}"
+          "#{addition}"
         #"{([:number1] + [:number2])}"
 
       elsif @operation == "subtract"
-        subtration = @number1.to_i - @number2.to_i
-        "#{subtration}"
+        subtraction = @number1.to_i - @number2.to_i
+          "#{subtraction}"
         #{}"{([:number1] - [:number2])}"
 
       elsif @operation == "multiply"
         multiplication = @number1.to_i * @number2.to_i
-        "#{multiplication}"
+          "#{multiplication}"
         #{}"{([:number1] * [:number2])}"
 
-      elsif @operation == "divide"
-        division = @number1 / @number2
-        "#{division}"
+      else
+         @operation == "divide"
+          division = @number1 / @number2
+            "#{division}"
         #"{([:number1] / [:number2])}"
-
-      #else
-        #{}"I did not recognize the operation"
       end
   end
 end
