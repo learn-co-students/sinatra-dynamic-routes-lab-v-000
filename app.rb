@@ -31,20 +31,25 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    a_var = params[:operation]
-    a_var1 = params[:number1]
-    a_var2 = params[:number2]
+      a_var = params[:operation]
+      a_var1 = params[:number1]
+      a_var2 = params[:number2]
     if a_var == 'add'
+     a_var
+     binding.pry
      a_var3 = a_var1.to_i + a_var2.to_i
-     a_var3
+     return "#{a_var3}"
      binding.pry
     elsif a_var == 'subtract'
-     return a_var1.to_i - a_var2.to_i
+     a_var3 = a_var1.to_i - a_var2.to_i
+     return "#{a_var3}"
     elsif a_var == 'multiply'
        #binding.pry
-     return a_var1.to_i * a_var2.to_i
+     a_var3 = a_var1.to_i * a_var2.to_i
+     return "#{a_var3}"
     elsif a_var == 'divide'
-    return a_var1.to_i / a_var2.to_i
+      a_var3 = a_var1.to_i / a_var2.to_i
+      return "#{a_var3}"
     end
   end
 end
