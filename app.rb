@@ -34,19 +34,19 @@ class App < Sinatra::Base
     a_var = params[:operation]
     a_var1 = params[:number1]
     a_var2 = params[:number2]
-    #binding.pry
+    binding.pry
     case a_var
-    binding.pry
+    #binding.pry
     when a_var == '+'
-    binding.pry
-     a_var1 + a_var2
+    #binding.pry
+     a_var1.to_i + a_var2.to_i
      when a_var == '-'
-       a_var1 - a_var2
+       a_var1.to_i - a_var2.to_i
      when a_var == '/'
      #binding.pry
-      a_var1 / a_var2
+      a_var1.to_i / a_var2.to_i
      when a_var == '*'
-      a_var1 * a_var2
+      a_var1.to_i * a_var2.to_i
     end
   end
 end
