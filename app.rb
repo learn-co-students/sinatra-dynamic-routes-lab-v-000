@@ -34,18 +34,17 @@ class App < Sinatra::Base
     a_var = params[:operation]
     a_var1 = params[:number1]
     a_var2 = params[:number2]
-    binding.pry
-    #binding.pry
-    if a_var == '+'
-    #binding.pry
-     a_var1.to_i + a_var2.to_i
-    elsif a_var == '-'
-         a_var1.to_i - a_var2.to_i
-    elsif a_var == '/'
+    if a_var == 'add'
+     a_var3 = a_var1.to_i + a_var2.to_i
+     a_var3
+     binding.pry
+    elsif a_var == 'subtract'
+     return a_var1.to_i - a_var2.to_i
+    elsif a_var == 'multiply'
        #binding.pry
-        a_var1.to_i / a_var2.to_i
-    elsif a_var == '*'
-      a_var1.to_i * a_var2.to_i
+     return a_var1.to_i * a_var2.to_i
+    elsif a_var == 'divide'
+    return a_var1.to_i / a_var2.to_i
     end
   end
 end
