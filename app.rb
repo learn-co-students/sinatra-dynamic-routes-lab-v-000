@@ -36,6 +36,7 @@ class App < Sinatra::Base
     a_var2 = params[:number2]
     #binding.pry
     case a_var
+    binding.pry
     when a_var == '+'
     binding.pry
      a_var1 + a_var2
