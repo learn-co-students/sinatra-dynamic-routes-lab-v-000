@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+  <h1>
+    <%=
+      if params[:operation].downcase == 'add'
+        params[:number1].to_i + params[:number2].to_i
+      elsif params[:operation].downcase == 'subtract'
+        params[:number1].to_i - params[:number2].to_i
+      elsif params[:operation].downcase == 'multiply'
+        params[:number1].to_i * params[:number2].to_i
+      elsif params[:operation].downcase == 'divide'
+        params[:number1].to_i / params[:number2].to_i
+      end
+    %>
+</h1>
+  </body>
+</html>
