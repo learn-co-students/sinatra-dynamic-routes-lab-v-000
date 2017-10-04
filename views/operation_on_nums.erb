@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Operation on Two Numbers </title>
+  </head>
+  <body>
+    <% case @operation
+         when "add" %>
+        <p> <%= @number1 %> + <%= @number2 %> = <%= @number1 + @number2 %> </p>
+      <% when "subtract" %>
+        <p> <%= @number1 %> - <%= @number2 %> = <%= @number1 - @number2 %> </p>
+      <% when "multiply" %>
+        <p> <%= @number1 %> * <%= @number2 %> = <%= @number1 * @number2 %> </p>
+      <% when "divide" %>
+        <p> <%= @number1 %> / <%= @number2 %> = <%= @number1 / @number2 %> </p>
+    <% end %>
+  </body>
+</html>
