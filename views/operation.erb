@@ -1,0 +1,8 @@
+<%result = case @op %>
+<% when "add" then @num1 + @num2 %>
+<% when "subtract" then @num1 - @num2 %>
+<% when "multiply" then @num1 * @num2 %>
+<% when "divide" then @num1 / @num2 %>
+<% else "Sorry, something went wrong." %>
+<% end %>
+<h1><%= result %></h1>
