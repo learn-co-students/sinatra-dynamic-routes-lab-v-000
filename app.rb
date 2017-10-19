@@ -1,7 +1,7 @@
 require_relative 'config/environment'
 require 'pry'
 class App < Sinatra::Base
-  # Write your code here!
+
   get '/reversename/:name' do
     @reverse_name = params[:name].reverse
   end
@@ -12,15 +12,13 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @number = params[:number].to_i
-    @phrase = params[:phrase]
+    @phrase = ""
 
-    array = []
-    @number.times do |i|
-      array << @phrase
+    params[:number].to_i.times do |i|
+      @phrase += "#{params[:phrase]} "
     end
 
-    "#{array.join(", ")}."
+    "#{@phrase}"
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
@@ -29,6 +27,7 @@ class App < Sinatra::Base
 
   get '/:operation/:number1/:number2' do
     case params[:operation]
+
     when "add"
       @result = params[:number1].to_i + params[:number2].to_i
       "#{@result}"
@@ -43,7 +42,5 @@ class App < Sinatra::Base
       "#{@result}"
     end
   end
-
-
 
 end
