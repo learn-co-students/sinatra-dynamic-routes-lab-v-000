@@ -21,7 +21,7 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    params.each_value.map { |value| value }.join(" ") << "."
+    @words = params.values.join(" ") << "."
   end
 
   get '/:operation/:number1/:number2' do
@@ -30,15 +30,14 @@ class App < Sinatra::Base
 
     case @op
       when "add"
-        @result = @arr.reduce(:+)
+        "#{@arr.reduce(:+)}"
       when "subtract"
-        @result = @arr.reduce(:-)
+        "#{@arr.reduce(:-)}"
       when "multiply"
-        @result = @arr.reduce(:*)
+        "#{@arr.reduce(:*)}"
       when "divide"
-        @result = @arr.reduce(:/)
+        "#{@arr.reduce(:/)}"
     end
 
-    "#{@result}"
   end
 end
