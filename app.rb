@@ -22,6 +22,20 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    
+    @operation = params[:operation]
+    @num1 = params[:num1]
+    @num2 = params[:num2]
+
+    if @operation == "add"
+      "#{@num1 + @num2}"
+    elsif @operation == "subract"
+      "#{@num1 - @num2}"
+    elsif @operation == "multiply"
+      "#{@num1 * @num2}"
+    elsif @operation == "divide"
+      "#{@num1 / @num2}"
+    else
+      "This is not a valid operation"
+    end
   end
 end
