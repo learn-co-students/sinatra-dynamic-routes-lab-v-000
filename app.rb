@@ -15,8 +15,10 @@ class App < Sinatra::Base
   end
 
   get '/:number/:phrase' do
+    'show me the money'
+    # "#{params[:phrase]}"
 
-    "#{params[:phrase]}" #when i put a % in the url, this throws a "bad request" response on webpage
+    #when i put a % in the url, this throws a "bad request" response on webpage
     # "show me the money" - even this doesn't produce one show in test results
   end
 
