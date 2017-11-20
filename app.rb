@@ -14,37 +14,12 @@ class App < Sinatra::Base
     "#{@num}"
   end
 
-  get '/:number/:phrase' do
-    'show me the money'
-    # "#{params[:phrase]}"
-
-    #when i put a % in the url, this throws a "bad request" response on webpage
-    # "show me the money" - even this doesn't produce one show in test results
+  get '/say/:number/:phrase' do
+    @num = params[:number].to_i
+    @phrase = params[:phrase] + "\n"
+    @output = "#{@phrase}" * @num
+    @output
   end
-
-  # # flatiron solution below.  It does not work.
-  #   final_string = ""
-  #   (params[:number].to_i).times do
-  #     final_string += "#{params[:phrase]}\n"
-  #   end
-  #   final_string
-  # end
-
-  #   @num = params[:number].to_i
-  #   @phrase = params[:phrase] + ". " # "\n"
-  #   @output = "#{@phrase}" * @num
-  #   # @output = "#{@phrase}\n" * @num
-  #   @output
-  # end
-
-    # erb :repeater # Not sure why erb is not working...
-
-    # @num = params[:number].to_i
-    # @phrase = params[:phrase]
-    # #@num.times do
-    #   "#{@phrase}"
-    # #end
-  # end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     @w1 = params[:word1]
@@ -71,21 +46,5 @@ class App < Sinatra::Base
   # Note: all of these methods were very finiky.  Took a lot of playing around
   # With different ways to get them to work.
 
-    # @num1 = params[:number1]
-    # @num2 = params[:number2]
-    # @op = case params[:operation]
-    #   when "subtract" then -
-    #   when "add" then +
-    #   when "multiply" then *
-    #   when "divide" then /
-    # end
-    # "#{@num1 @op @num2}"
-
-
-
-
-  # get '/' do
-  #   erb :repeater
-  # end
 
 end
