@@ -1,4 +1,5 @@
 require_relative 'config/environment'
+require 'pry'
 
 class App < Sinatra::Base
   # Write your code here!
@@ -14,10 +15,25 @@ class App < Sinatra::Base
   end
 
   get '/:number/:phrase' do
-    @num = params[:number].to_i
-    @phrase = params[:phrase]
-    @output = "#{@phrase} " * @num
-    @output
+
+    "#{params[:phrase]}" #when i put a % in the url, this throws a "bad request" response on webpage
+    # "show me the money" - even this doesn't produce one show in test results
+  end
+
+  # # flatiron solution below.  It does not work.
+  #   final_string = ""
+  #   (params[:number].to_i).times do
+  #     final_string += "#{params[:phrase]}\n"
+  #   end
+  #   final_string
+  # end
+
+  #   @num = params[:number].to_i
+  #   @phrase = params[:phrase] + ". " # "\n"
+  #   @output = "#{@phrase}" * @num
+  #   # @output = "#{@phrase}\n" * @num
+  #   @output
+  # end
 
     # erb :repeater # Not sure why erb is not working...
 
@@ -26,7 +42,7 @@ class App < Sinatra::Base
     # #@num.times do
     #   "#{@phrase}"
     # #end
-  end
+  # end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     @w1 = params[:word1]
