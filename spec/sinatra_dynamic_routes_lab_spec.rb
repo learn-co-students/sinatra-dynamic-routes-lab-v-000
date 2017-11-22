@@ -44,13 +44,11 @@ describe App do
   describe 'GET /say/:number/:phrase' do
     it 'sends a 200 status code' do
       get '/say/3/show%20me%20the%20money'
-
       expect(last_response.status).to eq(200)
     end
 
     it 'repeats the phrase n times' do
       get '/say/3/show%20me%20the%20money'
-
       expect(last_response.body.scan('show me the money').size).to eq(3)
     end
 
