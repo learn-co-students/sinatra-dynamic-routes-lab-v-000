@@ -43,5 +43,4 @@ class App < Sinatra::Base
       solution = (@number1 / @number2).to_s
     end
   end
-
 end
