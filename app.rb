@@ -37,7 +37,7 @@ class App < Sinatra::Base
    @op = params[:operation]
    @num1 = params[:number1].to_i
    @num2 = params[:number2].to_i
-   
+   @total = " "
     case @op
       when "add"
        @total = @num1 + @num2
@@ -45,7 +45,7 @@ class App < Sinatra::Base
         @total = @num1 - @num2
       when "multiply"
         @total = @num1 * @num2
-      else #"divide"
+      when "divide"
         @total = @num1 / @num2
      end
      "#{@total}"
