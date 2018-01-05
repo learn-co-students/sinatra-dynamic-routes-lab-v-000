@@ -20,7 +20,13 @@ class App < Sinatra::Base
   end
 
   get "/say/:word1/:word2/:word3/:word4/:word5" do
-    @word_array = [params[:word1], params[:word2], params[:word3], params[:word4], params[:word5]]
+    @word_array = [
+                  params[:word1],
+                  params[:word2],
+                  params[:word3],
+                  params[:word4],
+                  params[:word5]
+                  ]
     @word_array.join(" ") << "."  
   end
 
@@ -43,7 +49,7 @@ class App < Sinatra::Base
       @total = params[:number1].to_i / params[:number2].to_i 
       @total.to_s
     end
-
+q
   end
 
 
