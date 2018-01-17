@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operation</title>
+    </head>
+    <body>
+        <% if @operation == "add" %>
+          <p><%= @num1 + @num2 %></p>
+        <% elsif @operation == "subtract" %>
+          <p><%= @num1 - @num2 %></p>
+        <% elsif @operation == "multiply" %>
+          <p><%= @num1 * @num2 %></p>
+        <% elsif @operation == "divide" %>
+          <p><%= @num1 / @num2 %></p>
+        <% end %>
+    </body>
+</html>
