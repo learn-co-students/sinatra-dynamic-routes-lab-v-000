@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <%number = params[:number].to_i%>
+    <%phrase = params[:phrase]%>
+
+    <ul>
+      <% number.times do  %>
+        <li><%= phrase %></li>
+        <% end %>
+    </ul>
+
+  </body>
+</html>
