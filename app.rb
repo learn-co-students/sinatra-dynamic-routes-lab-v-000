@@ -28,9 +28,26 @@ class App < Sinatra::Base
     number1 = params[:number1].to_i
     number2 = params[:number2].to_i
 
-    result = number1, params[:operation], number2
-    "#{result}"
-  end
+    case params[:operation]
 
+    when "add"
+    result = number1 + number2
+    "#{result}"
+
+    when "subtract"
+    result = number1 - number2
+    "#{result}"
+
+    when "multiply"
+    result = number1 * number2
+      "#{result}"
+
+    when "divide"
+      result = number1 / number2
+      "#{result}"
+
+    else "Not One of the 4 Valid Operators in RSpec (only add, subtract, multiply, and divide)"
+  end
+end
 
 end
