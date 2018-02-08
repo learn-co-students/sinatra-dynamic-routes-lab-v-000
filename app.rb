@@ -20,4 +20,20 @@ class App < Sinatra::Base
     "#{@sentence}."
   end
 
+  get '/:operation/:number1/:number2' do
+    case params[:operation]
+    when 'add'
+      "#{(params[:number1].to_i + params[:number2].to_i).to_s}"
+    when 'subtract'
+      "#{(params[:number1].to_i - params[:number2].to_i).to_s}"
+    when 'multiply'
+      "#{(params[:number1].to_i * params[:number2].to_i).to_s}"
+    when 'divide'
+      if 0 == params[:number2].to_i
+        "Can not divide by zero, my friend"
+      else
+        "#{(params[:number1].to_i / params[:number2].to_i).to_s}"
+      end
+    end
+  end
 end
