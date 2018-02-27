@@ -1,0 +1,3 @@
+<% @msg = '' %>
+<% params.each.map{|k,v| @msg += "#{v} "} %>
+<%= "#{@msg.strip}." %>
