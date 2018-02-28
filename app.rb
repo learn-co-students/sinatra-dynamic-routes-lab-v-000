@@ -30,4 +30,13 @@ class App < Sinatra::Base
     #inding.pry
     "#{@sentence}."
   end
+
+  get '/:operation/:number1/:number2' do
+    @operator = params[:operation]
+    @num1 = params[:number1].to_i
+    @num2 = params[:number2].to_i
+    vals = {"add" => "+" , "subtract" => "-", "divide" => "/", "multiply" => "*"}
+    #binding.pry
+    "#{@num1 }"
+  end
 end
