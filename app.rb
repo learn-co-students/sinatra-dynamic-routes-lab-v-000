@@ -32,11 +32,13 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-    @operator = params[:operation]
+    @op_str = params[:operation]
     @num1 = params[:number1].to_i
     @num2 = params[:number2].to_i
-    vals = {"add" => "+" , "subtract" => "-", "divide" => "/", "multiply" => "*"}
+    vals = {"add" => :+ , "subtract" => :-, "divide" => :/, "multiply" => :*}
+    @operator = vals[@op_str]
+    "#{@num1.send(@operator,@num2)}"
+    #1.send(add,1)
     #binding.pry
-    "#{@num1 }"
   end
 end
