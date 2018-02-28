@@ -10,7 +10,18 @@ class App < Sinatra::Base
   end
 
   get '/square/:number' do
-    @num = params[:number]
+    @num = params[:number].to_i
+    #binding.pry
     "#{@num*@num}"
+  end
+
+  get '/say/:number/:phrase' do
+    @num = params[:number].to_i
+    @words = params["phrase"]
+    #binding.pry
+    #{}"#{@num.times do print @words end}"
+    #binding.pry
+    # erb :say
+    "#{@words*@num}"
   end
 end
