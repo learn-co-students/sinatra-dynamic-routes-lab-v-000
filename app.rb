@@ -1,5 +1,5 @@
 require_relative 'config/environment'
-
+require 'pry'
 class App < Sinatra::Base
   # Write your code here!
 
@@ -9,10 +9,19 @@ class App < Sinatra::Base
 
     "#{@user_name.reverse}"
   end
-get "/square/:number" do
 
-  x = params[:number.to_i]
+  get "/square/:number" do
+    x = params[:number].to_i
+    square = x * x
+    "#{square}"
+  end
 
+  get "/say/:number/:phrase" do
+    x = params[:number].to_i
+    y = params[:phrase]
+    x.times do |y|
+      puts y
+    end
+  end
 
-end
 end
