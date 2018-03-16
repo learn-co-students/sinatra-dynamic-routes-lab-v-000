@@ -1,5 +1,7 @@
 require_relative 'config/environment'
-
+#we need all the return values to be a string su that the expected status code is not overwritten
+#anything that is a string is assumed to be the response
+#anything that is an integer is assumed to be a HTTP status code
 class App < Sinatra::Base
   # Write your code here!
   get '/reversename/:name' do
