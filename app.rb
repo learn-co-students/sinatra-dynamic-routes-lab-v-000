@@ -20,7 +20,7 @@ class App < Sinatra::Base
     answer
   end
 
-  get '/say/:word1/:word2/:word3/:word4/:word5'
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
     output = params[:word1] + params[:word2] + params[:word3] + params[:word4] + params[:word5]
     output
   end
