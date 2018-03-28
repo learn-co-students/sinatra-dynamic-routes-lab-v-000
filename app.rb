@@ -52,18 +52,16 @@ class App < Sinatra::Base
       operation = params[:operation]
       answer = []
 
-      while @num1.to_i != nil && @num2.to_i != nil
-        if operation == 'add'
-          answer << @num1 + @num2
-        elsif operation == 'subtract'
-          answer << @num1 - @num2
-        elsif operation == 'multiply'
-          answer << @num1 * @num2
-        elsif operation == 'divide'
-          answer << @num1 / @num2
-        end
+      if operation == 'add'
+        answer << @num1 + @num2
+      elsif operation == 'subtract'
+        answer << @num1 - @num2
+      elsif operation == 'multiply'
+        answer << @num1 * @num2
+      elsif operation == 'divide'
+        answer << @num1 / @num2
       end
-      answer
+      answer.to_s
     end
 
 end
