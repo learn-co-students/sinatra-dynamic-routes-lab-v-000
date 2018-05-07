@@ -34,9 +34,7 @@ class App < Sinatra::Base
     when "divide"
       op = "/"
     end
-    string = params[:number1]
-    string += op
-    string += params[:number2]
+    string = params[:number1] + op + params[:number2]
     "#{eval string}"
   end
 
