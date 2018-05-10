@@ -23,8 +23,8 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    @string = params[:word1] + params[:word2] + params[:word3] + params[:word4] + params[:word5]
-    "#{@string}"
+    @string = params[:word1] + " " + params[:word2] + " " + params[:word3] + " " + params[:word4] + " " + params[:word5]
+    "#{@string}."
   end
 
   get '/:operation/:number1/:number2' do
@@ -33,13 +33,13 @@ class App < Sinatra::Base
     @operation = params[:operation]
     case @operation
     when "add"
-      @number1 + @number2
+      "#{@number1 + @number2}"
     when "subtract"
-      @number1 - @number2
+      "#{@number1 - @number2}"
     when "multiply"
-      @number1 * @number2
+      "#{@number1 * @number2}"
     when "divide"
-      @number1 / @number2
+      "#{@number1 / @number2}"
     else
       "Select an applicable operation : add, subtract, multiply, or divide"
     end
