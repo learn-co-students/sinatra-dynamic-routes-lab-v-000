@@ -1,0 +1,16 @@
+<% 
+value = 0
+if params[:operation] == 'add'
+    value = params[:num1].to_i + params[:num2].to_i
+elsif params[:operation] == 'subtract'
+    value = params[:num1].to_i - params[:num2].to_i
+elsif params[:operation] == 'multiply'
+    value = params[:num1].to_i * params[:num2].to_i
+elsif params[:operation] == 'divide' 
+    value = params[:num1].to_i / params[:num2].to_i
+else
+    value = "Enter correct data."
+end
+%>
+
+<%= "#{value}" %>
