@@ -42,7 +42,7 @@ class App < Sinatra::Base
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
 
-    # refactor to case statement??
+    # refactor without result var?
    case @operation
     when "add"
      result = @number1 + @number2
