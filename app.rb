@@ -20,6 +20,7 @@ class App < Sinatra::Base
     #  response += params[:phrase]
     #end
     #response
+    # CANNOT use @response; tests will fail; Sinatra uses @response for Sinatra's internal purposes 
     @number = params[:number].to_i
     @phrase = params[:phrase]
     response = ""
