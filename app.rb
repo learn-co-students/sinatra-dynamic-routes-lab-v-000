@@ -13,21 +13,44 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
+    phrase = ''
+    @phrase = params[:phrase]
     @num = params[:number]
-    @int = @num.to_i
-    @phrase =params[:phrase]
-    2.times do
-      "#{@phrase}"
+    @num.to_i.times do
+      phrase += @phrase
     end
+    phrase
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    @word1 = params[word1]
-    @word2 = params[word2]
-    @word3 = params[word3]
-    @word4 = params[word4]
-    @word5 = params[word5]
-    "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}"
+    # @word1 = params[word1]
+    # @word2 = params[word2]
+    # @word3 = params[word3]
+    # @word4 = params[word4]
+    # @word5 = params[word5]
+    "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
   end
+
+  get '/:operation/:number1/:number2' do
+
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+
+    answer = 'Unable to perform this operation'
+
+    case params[:operation]
+    when 'add'
+      answer = (number1 + number2).to_s
+    when 'subtract'
+      answer = (number1 - number2).to_s
+    when 'multiply'
+      answer = (number1 * number2).to_s
+    when 'divide'
+      answer = (number1 / number2).to_s
+    end
+    answer
+
+  end
+
 
 end
