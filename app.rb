@@ -4,13 +4,23 @@ require 'pry'
 class App < Sinatra::Base
 
   get "/reversename/:name" do
-    #binding.pry
     @name = params[:name]
-    #binding.pry
     name_reverse = @name.reverse
-    #binding.pry
     name_reverse
+  end
 
-  end# Write your code here!
+  get "/square/:number" do
+    num = params[:number].to_i
+    @square = num * num
+    "#{@square}"
+  end
+
+  get "/say/:number/:phrase" do
+    num = params[:number].to_i
+    @phrase = params[:phrase]
+    @phrase * num
+
+  end
+    # Write your code here!
 
 end
