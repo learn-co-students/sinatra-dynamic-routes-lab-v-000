@@ -21,6 +21,16 @@ class App < Sinatra::Base
     @phrase * num
 
   end
-    # Write your code here!
+
+    get "/say/:word1/:word2/:word3/:word4/:word5" do
+      @word1 = params[:word1]
+      @word2 = params[:word2]
+      @word3 = params[:word3]
+      @word4 = params[:word4]
+      @word5 = params[:word5]
+      #binding.pry
+      @word1 + " " + @word2 + " " + @word3 + " " + @word4 + " " + @word5 + "."
+    end
+      # Write your code here!
 
 end
