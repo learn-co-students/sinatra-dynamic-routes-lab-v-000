@@ -32,7 +32,16 @@ class App < Sinatra::Base
     @operation = params[:operation]
     @num_1 = params[:number1].to_i
     @num_2 = params[:number2].to_i
-    @sum = @num_1.send(@operation, @num_2)
+    if @operation.include?('add')
+      @new = '+'
+      elsif @operation.include?('subtract')
+      @new = '-'
+      elsif @operation.include?('multiply')
+      @new = '*'
+    else
+      @new = '/'
+    end
+    @sum = @num_1.send(@new, @num_2)
     "#{@sum}"
   end 
 end
