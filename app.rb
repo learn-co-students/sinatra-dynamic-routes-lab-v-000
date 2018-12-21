@@ -18,11 +18,15 @@ class App < Sinatra::Base
   get "/say/:number/:phrase" do
     @number = params[:number]
     @phrase = params[:phrase]
-    #Need to figure out why phrase isn't printing correctly.
-    "#{@phrase}"
+    phrases = ""
+    @number.to_i.times do
+      phrases += @phrase
+    end
+    phrases
   end
+
   
-  get "/say/:word1/:word2/:word3/:word4/:word5" do
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
     @word1 = params[:word1]
     @word2 = params[:word2]
     @word3 = params[:word3]
@@ -31,13 +35,22 @@ class App < Sinatra::Base
     "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}."
   end
   
-  #How to integrate the operation?
   get "/:operation/:number1/:number2" do
     @operation = params[:operation]
     @number1 = params[:number1]
     @number2 = params[:number2]
-    @solution = (@number1.to_i) + (@number2.to_i)
+    if @operation == "add"
+      @solution = (@number1.to_i) + (@number2.to_i)
+      elsif @operation == "subtract"
+      @solution = (@number1.to_i) - (@number2.to_i)
+      elsif @operation == "multiply" 
+      @solution = (@number1.to_i) * (@number2.to_i)
+      elsif @operation == "divide"
+      @solution = (@number1.to_i) / (@number2.to_i)
+    else
+      puts "Do you know math?"
+    end
     "#{@solution}"
   end
-  
+
 end
