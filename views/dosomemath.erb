@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <% @result = "" %>
+    <% @num1, @num2 = params[:number1].to_i, params[:number2].to_i %>
+    
+    <% case params[:operation]
+       when "add" %>
+    <% @result = (@num1 + @num2).to_s %>
+    <% when "subtract" %>
+    <% @result = (@num1 - @num2).to_s %>
+    <% when "multiply" %>
+    <% @result = (@num1 * @num2).to_s  %>
+    <% when "divide" %>
+    <% @result = (@num1 / @num2).to_s  %>
+    <% else %>
+    <% @result = "Error, invalid operator given" %>
+    <% end %>
+
+    <h1><%= @result %></h1>
+  </body>
+</html>
