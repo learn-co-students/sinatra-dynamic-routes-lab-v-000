@@ -3,35 +3,37 @@ require_relative 'config/environment'
 class App < Sinatra::Base
   
   get '/reversename/:name' do
-    @name = params[:name]
-    "#{@name.reverse}"
+    params[:name].reverse
   end
 
   get '/square/:number' do
-    @number = params[:number].to_i ** 2
-    "#{@number}"
+    (params[:number].to_i ** 2).to_s
   end
 
   get '/say/:number/:phrase' do
-    @number_phrase = params[:phrase] * params[:number].to_i
-    "#{@number_phrase}"
+    (params[:phrase] * params[:number].to_i).to_s
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    @five_words = params[:word1] + " " + params[:word2] + " " + params[:word3] + " " + params[:word4] + " " + params[:word5] + "."
+    # params[:word1] + " " + params[:word2] + " " + params[:word3] + " " + params[:word4] + " " + params[:word5] + "."
+    "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
   end
 
   get '/:operation/:number1/:number2' do
-    if params[:operation] == "add"
-      @math = params[:number1].to_i + params[:number2].to_i
-    elsif params[:operation] == "subtract"
-      @math = params[:number1].to_i - params[:number2].to_i
-    elsif params[:operation] == "multiply"
-      @math = params[:number1].to_i * params[:number2].to_i
-    elsif params[:operation] == "divide"
-      @math = params[:number1].to_i / params[:number2].to_i
+    op = params[:operation]
+    n1 = params[:number1].to_i
+    n2 = params[:number2].to_i
+
+    if op == "add"
+      math = n1 + n2
+    elsif op == "subtract"
+      math = n1 - n2
+    elsif op == "multiply"
+      math = n1 * n2
+    elsif op == "divide"
+      math = n1 / n2
     end
-    "#{@math}"
+    "#{math}"
   end
 
 end
