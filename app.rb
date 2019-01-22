@@ -13,13 +13,22 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @number = params[:number] #"3"
-    @phrase = params[:phrase] 
-    # binding.pry
+    repeated_phrase = ""
+    params[:number].to_i.times do |n|
+      repeated_phrase += params[:phrase]
+    end
+      repeated_phrase
+  end
+
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
+  end
+
+  get '/:operation/:number1/:number2' do
+    "#{params[:number1]} params[:operation] #{params[:number2]}"
+    binding.pry
+    #convert to integers and do if/else statement?
   end
 
 
 end
-
-
-# binding.pry
