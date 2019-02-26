@@ -29,7 +29,27 @@ class App < Sinatra::Base
     @w3= params[:word3]
     @w4= params[:word4]
     @w5= params[:word5]
-    
+    @w1+" "+@w2+" "+@w3+" "+@w4+" "+@w5+"."
+  end
+  
+  get '/:operation/:number1/:number2' do
+    # binding.pry
+    @op= params[:operation]
+    @num1= params[:number1].to_i
+    @num2= params[:number2].to_i
+    if @op == "add"
+      @val = @num1+@num2
+      @val.to_s
+    elsif @op == "subtract"
+      @val = @num1 - @num2
+      @val.to_s
+    elsif @op == "multiply"
+      @val = @num1 * @num2
+      @val.to_s
+    elsif @op == "divide"
+      @val = @num1/@num2
+      @val.to_s
+    end
   end
   
 end
