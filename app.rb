@@ -13,5 +13,9 @@ class App < Sinatra::Base
     @sq = @num * @num
     @sq.to_s
   end
+  
+  get '/say/:number/:phrase' do
+    
+  end
 
 end
