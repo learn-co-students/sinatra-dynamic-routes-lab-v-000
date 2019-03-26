@@ -15,11 +15,11 @@ class App < Sinatra::Base
 
   get "/say/:number/:phrase" do
     binding.pry
-    @phrase = params[:phrase].gsub
+    url_encoded_string = URI::escape(params[:phrase])
+    params.each { |k, v| params[:phrase] = url_encoded_string }
+    @phrase = params[:phrase]
     @number = params[:number].to_i
-      @number.times do
-        "#{@phrase}"
-      end
+
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
