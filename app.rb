@@ -1,5 +1,6 @@
 require_relative 'config/environment'
 require 'pry'
+require 'uri'
 
 class App < Sinatra::Base
   #accepts the name and renders name backwards
@@ -13,13 +14,11 @@ class App < Sinatra::Base
     "#{@number*@number}"
   end
 
-  get "/say/:number/:phrase" do
-    binding.pry
-    url_encoded_string = URI::escape(params[:phrase])
-    params.each { |k, v| params[:phrase] = url_encoded_string }
-    @phrase = params[:phrase]
+  get "/say/:number/" + URI.encode(":phrase") do
     @number = params[:number].to_i
-
+    @phrase = URI.decode(params[:phrase])
+    @total = @phrase * @number
+    "#{@total}"
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
