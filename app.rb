@@ -1,9 +1,7 @@
 require_relative 'config/environment'
 require 'pry'
-require 'uri'
 
 class App < Sinatra::Base
-
   #accepts the name and renders name backwards
   get '/reversename/:name' do
     @user_name = params[:name].reverse
@@ -15,13 +13,13 @@ class App < Sinatra::Base
     "#{@number*@number}"
   end
 
-  get '/say/:number/:phrase' do
-    #binding.pry
-    @encoded_phrase = params[:phrase].split.join("%20")
-    @number = params[:number]
-    @number.to_i.times do
-      "#{@phrase} "
-    end
+  get "/say/:number/:phrase" do
+    binding.pry
+    @phrase = params[:phrase].gsub
+    @number = params[:number].to_i
+      @number.times do
+        "#{@phrase}"
+      end
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
