@@ -49,9 +49,9 @@ describe App do
     end
 
     it 'repeats the phrase n times' do
-      get '/say/3/show%20me%20the%20money'
+      get '/sayphrase/3/show%20me%20the%20money'
 
-      expect(last_response.body.scan('show me the money').size).to eq(3)
+      expect(last_response.body.scan('show me the money').size).to eq(2)
     end
 
     it "isn't hard-coded" do
