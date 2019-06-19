@@ -1,0 +1,28 @@
+<% 
+
+number = params[:number].to_i 
+phrase = params[:phrase]
+
+phrases = []
+
+number.times do 
+    phrases << phrase
+end
+words = []
+
+
+%>
+
+<%= 
+if params[:number]
+     phrases.each do |phrase|
+        "#{phrase}"
+    end
+elsif params[:word1]
+    params.each do |key,value|
+        words << value
+    end
+    
+    "#{words.join(" ")}."
+end
+%>
