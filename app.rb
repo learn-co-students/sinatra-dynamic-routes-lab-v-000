@@ -14,6 +14,7 @@ class App < Sinatra::Base
   
   get '/say/:number/:phrase' do 
     "#{params[:phrase]} " * params[:number].to_i
+    # Note: #to_i is called on params[:number], not the entire line of code.
   end
   
   get '/say/:word1/:word2/:word3/:word4/:word5' do 
