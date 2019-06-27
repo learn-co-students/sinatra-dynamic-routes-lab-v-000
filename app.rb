@@ -27,6 +27,18 @@ class App < Sinatra::Base
     @five_words = params[:word1] + " " + params[:word2] + " " + params[:word3] + " " + params[:word4] + " " + params[:word5] + "." 
   end
   
-  
+  get '/:operation/:number1/:number2' do 
+    case params[:operation]
+      when "add" 
+        @solution = params[:number1].to_i + params[:number2].to_i
+      when "subtract" 
+        @solution = params[:number1].to_i - params[:number2].to_i 
+      when "multiply" 
+        @solution = params[:number1].to_i * params[:number2].to_i 
+      when "divide" 
+        @solution = params[:number1].to_i / params[:number2].to_i 
+      end 
+      @solution.to_s  
+  end 
   
 end 
