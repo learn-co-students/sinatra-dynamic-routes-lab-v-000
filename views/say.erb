@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Say</title>
+    </head>
+    <body>
+        <% if @number %>
+          <% @number.times do %>
+          <p><%= @phrase %></p>
+          <% end %>
+        <% else %>
+          <p><%= "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}."%></p>
+        <% end %>
+    </body>
+</html>
