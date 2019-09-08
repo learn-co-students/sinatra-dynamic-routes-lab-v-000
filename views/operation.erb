@@ -1,0 +1,14 @@
+<DOCTYPE! html>
+<% operation = params[:operation] %>
+<% num1 = params[:number1].to_i %>
+<% num2 = params[:number2].to_i %>
+<% case operation %>
+<% when 'add' %>
+  <p><%= num1 + num2 %></p>
+<% when 'subtract' %>
+  <p><%= num1 - num2 %></p>
+<% when 'multiply' %>
+  <p><%= num1 * num2 %>
+<% when 'divide' %>
+  <p><%= num1/num2 %></p>
+<%end%>
