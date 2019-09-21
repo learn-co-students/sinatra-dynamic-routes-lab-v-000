@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Sinatra Practice</title>
+      <style>
+        body {text-align: center;color: #ffffff;background-color:#ffffff;background-image:url(https://wallpapercave.com/wp/wp1923355.jpg); background-repeat:repeat-y; background-position:top left; background-attachment:scroll; margin: 0;}
+        h1 {;font-size: 5em;text-shadow: 0 0 50px #4BC6E2;margin-bottom: 0;}
+        p, a {;font-family: Georgia, serif;font-size: 33px;font-style: italic;font-weight: normal;color: #ffffff;background-color: rgba(27, 23, 23, 0.92);padding: 18px; margin-right: -4px;margin-bottom: 0;}
+        form {display: inline-block;}
+        #form_field {margin: 10px;}
+        #form_label {font-size: 20px;}
+        .comment {font-size: 1em;font-style: normal;color: #ff1010;padding-top: 0;margin: 0;}
+      </style>
+    </head>
+<!------------------------------------------------------------------------->
+    <body>
+      <p id="sinatra">Sinatra Practice</p>
+      <!--comment-->
+      <p class="comment">Replace "reverse-this" with your name in browser url</p>
+      
+      <!--routes go here-->
+      <!--HOME-->
+      <a style="color: #9adae9;font-size: 25px;" href="/">Home</a>
+      
+      <!--reverse_name-->
+      <a style="color: #9adae9;font-size: 25px;" href="/reversename/reverse-this">Reverse_name</a>
+      
+      <!--square_number-->
+      <a style="color: #9adae9;font-size: 25px;" href="/square/0">Square_number</a>
+      
+      <!--repeat_phrase-->
+      <a style="color: #9adae9;font-size: 25px;" href="/say/1/repeat-this">Repeat_phrase</a>
+      
+      <!--concatenate-->
+      <a style="color: #9adae9;font-size: 25px;" href="/say/word1/word2/word3/word4/word5">Concatenate</a>
+      
+      <!--num_operate-->
+      <a style="color: #9adae9;font-size: 25px;" href="/add/0/0">Num_operate</a>
+      
+      <!--passing args-->
+      <h1>Your name in reverse is <%= params[:name].reverse %>!</h1>
+    </body>
+</html>
