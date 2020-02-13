@@ -16,7 +16,9 @@ class App < Sinatra::Base
 
   get "/say/:number/:phrase" do
     @phrase = []
-    params[:number].to_i.times do
+    @number = params[:number].to_i
+
+    @number.times do
       @phrase << params[:phrase]
     end
     @phrase
@@ -41,5 +43,7 @@ class App < Sinatra::Base
       @answer = (@number1 / @number2).to_s
     end
   end
+
+
 
 end
