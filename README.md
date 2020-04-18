@@ -5,7 +5,7 @@ This lab will serve to reinforce your understanding of routes in a Sinatra appli
 
 ## Spacing in URLs
 
-In some of the tests you might notice `%20` between words in a URL. URLs are not allowed to have spaces in them. Something like this `www.facebook.com/flatiron school` would never work as a website name. The `%` sign in a URL is called `URL encoding`. Basically, it replaces unsafe characters for a URL with appropriate ASCII characters.
+In some of the tests you might notice `%20` between words in a URL. URLs are not allowed to have spaces in them. Something like this `www.facebook.com/flatiron school` would never work as a website name. The `%` sign in a URL is called `URL encoding`. Basically, it replaces characters that are unsafe for a URL with appropriate ASCII characters.
 
 You can take a look at [this list](http://www.degraeve.com/reference/urlencoding.php) for a reference on unsafe url characters, and how to use url encoding to correct them.
 
