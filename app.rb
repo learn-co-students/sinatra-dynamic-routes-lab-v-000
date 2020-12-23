@@ -11,13 +11,13 @@ class App < Sinatra::Base
     (params[:number].to_i ** 2).to_s
   end
 
-  get "/say/:number/:phrase"
-    #@num = params[:number]
-    #@phrase = params[:phrase]
+  get "/say/:number/:phrase" do
+    @total = []
 
     params[:number].to_i.times do 
-      "#{params[:phrase]}"
+      @total << params[:phrase]
     end 
+    @total
   end 
 
 
