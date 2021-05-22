@@ -19,12 +19,23 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    @word1 = params[:word1]
-    @word2 = params[:word2]
-    @word3 = params[:word3]
-    @word4 = params[:word4]
-    @word5 = params[:word5]
-    "#{@word1} #{@word2} #{@word3} #{@word4} #{@word5}."
+    @word_1 = params[:word1]
+    @word_2 = params[:word2]
+    @word_3 = params[:word3]
+    @word_4 = params[:word4]
+    @word_5 = params[:word5]
+    "#{@word_1} #{@word_2} #{@word_3} #{@word_4} #{@word_5}."
   end
+
+  get '/:operation/:number1/:number2' do
+    @operation = params[:operation]
+    @number_1 = params[:number1]
+    @number_2 = params[:number2]
+    # eval"#{@number_1.to_i @operation @number_2.to_i}"
+    # @number_1.to_i.send(@operation, @number_2.to_i)
+    # "#{@number_1.to_i + @number_2.to_i}"
+    "#{@number_1.to_i + @number_2.to_i} || #{@number_1.to_i - @number_2.to_i} || 
+    #{@number_1.to_i * @number_2.to_i} || #{@number_1.to_i / @number_2.to_i}"
+  end 
 
 end
